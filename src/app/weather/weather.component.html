@@ -11,7 +11,10 @@
         </ul>
       </div>
       <div class="page-body__details">
-        <app-weather-details></app-weather-details>
+        <app-weather-details
+            *ngIf="chosenCity >= 0"
+            [forecast]="cities[chosenCity].forecast">
+            </app-weather-details>
       </div>
     </div>
    </div>

@@ -8,13 +8,43 @@
             (click)="onChooseCity(i)"> 
               {{ city.name }}
           </li>
+          <li class="cities-list__item"
+              (click)="onChooseCity(99)"> 
+              Rating
+          </li>
         </ul>
       </div>
+
       <div class="page-body__details">
         <app-weather-details
-            *ngIf="chosenCity >= 0"
+            *ngIf="chosenCity >= 0 && chosenCity <=90;" 
             [forecast]="cities[chosenCity].forecast">
-            </app-weather-details>
+        </app-weather-details>
+
+          <!-- Rating page -->
+          <div *ngIf="chosenCity == 99;"
+          class="d-flex justify-content-center">
+            <div class="alert alert-success" role="alert"
+                  *ngIf="chosenRating >= 0; else elseBlock">
+              Thanks for your rating {{chosenRating+1}}
+            </div>
+            <ng-template #elseBlock>
+              <div class="grid">
+                <div class="alert alert-primary row" role="alert">
+                  Rating weather app
+                </div>
+                <ul id="emoji" class="list-group list-group-horizontal-md row">
+                  <li class="list-inline" (click)="onChooseRating(0)" ><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1570938774/emojis/emoji11.png" /></li>
+                  <li class="list-inline" (click)="onChooseRating(1)"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1570938774/emojis/emoji22.png" /></li>
+                  <li class="list-inline" (click)="onChooseRating(2)"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1570938774/emojis/emoji33.png" /></li>
+                  <li class="list-inline" (click)="onChooseRating(3)"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1570938774/emojis/emoji44.png" /></li>
+                  <li class="list-inline" (click)="onChooseRating(4)"><img src="https://res.cloudinary.com/dxfq3iotg/image/upload/v1570938774/emojis/emoji55.png" /></li>
+                </ul>
+              </div>
+            </ng-template> 
+          </div>
+            
+
       </div>
     </div>
    </div>

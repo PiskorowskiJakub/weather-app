@@ -11,6 +11,7 @@ export class WeatherComponent implements OnInit {
 
   cities: Array<City> = []; // create empty array of cities
   chosenCity: any; // create variable for saving current (chosen) city
+  chosenRating: any; // chosen rating
 
   constructor(private cityService: CityService) { } //inject CityService to private variable
 
@@ -21,6 +22,11 @@ export class WeatherComponent implements OnInit {
   onChooseCity(index: number): void {
     console.log(index);
     this.chosenCity = index;
+  }
+
+  onChooseRating(index: number): void {
+    console.log(index);
+    this.chosenRating = index;
   }
 
 }

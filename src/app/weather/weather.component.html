@@ -16,10 +16,15 @@
       </div>
 
       <div class="page-body__details">
+        <!--
         <app-weather-details
             *ngIf="chosenCity >= 0 && chosenCity <=90;" 
             [forecast]="cities[chosenCity].forecast">
         </app-weather-details>
+        -->
+
+        <!--Router will be here soon-->
+        <router-outlet></router-outlet>
 
           <!-- Rating page -->
           <div *ngIf="chosenCity == 99;"

@@ -18,12 +18,12 @@ export class WeatherComponent implements OnInit {
   ngOnInit(): void {
     this.cities = this.cityService.getCities(); // on component initialize get data from service to local variable
   }
-
+/*
   onChooseCity(index: number): void {
     console.log(index);
     this.chosenCity = index;
   }
-
+*/
   onChooseRating(index: number): void {
     console.log(index);
     this.chosenRating = index;

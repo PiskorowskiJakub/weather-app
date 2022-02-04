@@ -1,5 +1,6 @@
 export interface Forecast {
-    conditions: string;
+  cityId: number;  
+  conditions: string;
     wind: {
       speed: number;
       direction: string;

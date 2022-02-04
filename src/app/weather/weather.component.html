@@ -3,13 +3,11 @@
     <div class="page-body">
       <div class="page-body__sidebar">
         <ul class="cities-list"> <!--Added the list of cities-->  
-            <li class="cities-list__item"
-            *ngFor="let city of cities; index as i"
-            (click)="onChooseCity(i)"> 
-              {{ city.name }}
+          <li class="cities-list__item" *ngFor="let city of cities">
+            <a [routerLink]="['details', city.id]">{{ city.name }}</a>
           </li>
           <li class="cities-list__item"
-              (click)="onChooseCity(99)"> 
+              (click)="chosenCity = 99"> 
               Rating
           </li>
         </ul>
